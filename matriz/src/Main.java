@@ -13,14 +13,14 @@ public class Main {
         Integer[][] matriz = new Integer[numberAux][numberAux];
 
         for (int i = 0; i < matriz.length; i++){
-            for (int j = 0; j < matriz.length; j++){
+            for (int j = 0; j < matriz[i].length; j++){
                 matriz[i][j] = scanner.nextInt();
             }
         }
 
         System.out.println("Matriz");
         for (int i = 0; i < matriz.length; i++){
-            for (int j = 0; j < matriz.length; j++){
+            for (int j = 0; j < matriz[i].length; j++){
                 System.out.print(matriz[i][j] + " ");
             }
             System.out.println();
@@ -29,7 +29,7 @@ public class Main {
         Integer negativeNumber = 0;
         System.out.println("Diagonal principal:");
         for (int i = 0; i < matriz.length; i++){
-            for (int j = 0; j < matriz.length; j++){
+            for (int j = 0; j < matriz[i].length; j++){
                 if (i == j){
                     System.out.print(matriz[i][j] + " ");
                 }
