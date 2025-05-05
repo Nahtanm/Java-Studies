@@ -2,7 +2,7 @@ import entities.ImportedProduct;
 import entities.Product;
 import entities.UsedProduct;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +35,7 @@ public class Main {
         System.out.println("PRICE TAGS");
 
         for (Product x : productList){
-            System.out.println(x.getName() + x.getPrice() + x.priceTag());
+            System.out.println(x.priceTag());
         }
 
         scanner.close();
@@ -54,7 +54,7 @@ public class Main {
             System.out.print("Manufacture date (DD/MM/YYYY): ");
             String dateManufacture = scanner.nextLine();
 
-            return new UsedProduct(nameProduct,priceProduct, LocalDateTime.parse(dateManufacture, formatter));
+            return new UsedProduct(nameProduct,priceProduct, LocalDate.parse(dateManufacture, formatter));
         } else if (productTags == 'i') {
             System.out.print("Customms fee: ");
             Double custommsFee = scanner.nextDouble();
