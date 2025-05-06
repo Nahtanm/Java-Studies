@@ -25,5 +25,11 @@ public class Main2 {
         //Duracao entre datas
         Duration duration = Duration.between(instant, instant1);
         System.out.println(duration.toDays());
+
+        LocalDate localDate3 = LocalDate.now();
+        LocalDate localDate4 = LocalDate.parse("2025-05-10");
+        Duration duration1 = Duration.between(localDate3,localDate4);
+        System.out.println(duration1.toDays());
+
     }
 }
