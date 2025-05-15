@@ -38,10 +38,8 @@ public class Program {
 
         contractService.processContract(contract, numberMonths);
 
-        List<Installment> installments = contract.getInstallment();
-
         System.out.println("Parcelas:");
-        for(Installment x : installments){
+        for(Installment x : contract.getInstallment()){
             System.out.println(x.toString());
         }
 

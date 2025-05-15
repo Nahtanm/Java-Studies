@@ -17,17 +17,15 @@ public class ContractService {
     public void processContract(Contract contract, Integer months) {
 
         Double installmentValue = contract.getTotalValue() / months;
-        LocalDate date = contract.getDate().plusDays(30);
 
         for (int i = 1; i <= months; i++) {
 
+            LocalDate date = contract.getDate().plusMonths(i);
+
             Double valueInstallment = taxPayment(installmentValue, i);
 
-            Installment installment = new Installment(valueInstallment, date);
+            contract.addInstallment(new Installment(valueInstallment, date));
 
-            contract.addInstallment(installment);
-
-            date = date.plusDays(30);
         }
 
     }
