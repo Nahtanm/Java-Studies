@@ -9,6 +9,11 @@ import java.util.List;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
+
+    public static int comparator(Product p1, Product p2){
+        return p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase());
+    }
+
     public static void main(String[] args) {
 
         List<Product> products = new ArrayList<>();
@@ -23,6 +28,10 @@ public class Main {
         Comparator<Product> comparator2 = (p1, p2) ->  p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase());
 
         products.sort(( p1,  p2) -> p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase()));
+
+        products.sort(Main::comparator);
+
+        products.forEach(System.out::println);
 
         for(Product t : products){
             System.out.println(t);
